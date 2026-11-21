@@ -1,0 +1,20 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "stoat-server-tui"
+version = "0.1.0"
+description = "A keyboard-first (HJKL) terminal UI to manage a self-hosted Stoat server (ss-tui)"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+dependencies = [
+    "textual>=1.0.0",
+]
+
+[project.scripts]
+ss-tui = "stoat_server_tui.app:run"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/stoat_server_tui"]
